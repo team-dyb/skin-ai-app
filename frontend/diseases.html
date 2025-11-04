@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benim İlk Web Sayfam</title>
+    <title>Diseases</title>
+    <link rel="stylesheet" href="disease.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Merhaba</h1>
+
+    <div class="nav-wrapper">
+        <nav class="main-nav">
+           <div class="logo">
+                Detect<span class="logo-blue">Disease</span>
+           </div>
+           <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="detection.html">Detection Page</a></li>
+                <li><a href="diseases.html" class="active">Diseases</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Our Team</a></li>
+           </ul>
+        </nav>
+    </div>
+
+    <section class="intro-section"> 
+        <div class="intro-content-wrapper"> 
+            
+            <div class="header-text">
+                <h1>What We Detect?</h1>
+                <p>
+                    Powered by advanced AI, our system accurately detects seven
+                    major types of skin lesions, including melanoma and other
+                    common skin cancers.
+                </p>
+                <p>
+                    Trained on thousands of dermatoscopic images, it analyzes subtle
+                    visual patterns invisible to the human eye - providing fast,
+                    reliable, and early insights to support dermatologists and clinical
+                    evaluation.
+                </p>
+            </div>
+            <div class="doctor-image">
+                <img src="https://www.regionalonehealth.org/wp-content/uploads/2020/11/Appendix-6-1-400x267.jpg" alt="Doctor with patient">
+            </div>
+            
+        </div> 
+    </section>
+
+    <main class="disease-list">
+        <div id="disease-container"></div>
+    </main>
+
+    <script src="disease.js"></script>
 </body>
 </html>

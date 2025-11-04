@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Melanocytic nevi",
+    "description": "Melanocytic nevi (commonly known as moles) are benign (non-cancerous) skin growths formed by clusters of pigment-producing cells called melanocytes. They are usually uniform in color and shape, and most people have several of them.",
+    "image_url": "https://dermnetnz.org/assets/Uploads/lesions/eccentric-pigment.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Melanoma",
+    "description": "Melanoma is a serious form of skin cancer that develops from melanocytes — the pigment-producing cells in the skin. It often appears as a new or changing mole with irregular borders or multiple colors. Early detection is critical, as melanoma can spread rapidly if left untreated.",
+    "image_url": "https://clarusdermatology.com/wp-content/uploads/2025/04/melanoma-2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Benign keratosis-like lesions",
+    "description": "Benign keratosis-like lesions (BKL) are non-cancerous skin growths that originate from keratinocytes in the skin. They include conditions such as seborrheic keratosis, solar lentigo, and lichen planus-like keratosis.",
+    "image_url": "https://apaxmedical.com/wp-content/uploads/2017/11/bigstock-167467022.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Basal cell carcinoma",
+    "description": "Basal cell carcinoma (BCC) is the most common type of skin cancer, developing from the basal cells in the outer layer of the skin. It often appears as a small, shiny bump or a red, scaly patch, often on sun-exposed areas like the face or neck.",
+    "image_url": "https://qdermatology.com.au/app/uploads/2019/05/Q-Dermatology_Web-Banners_20-1140x575.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Actinic keratoses",
+    "description": "Actinic keratoses (AK) are rough, scaly patches that develop on sun-exposed areas of the skin, such as the face, scalp, or hands. They are caused by long-term ultraviolet (UV) radiation damage and are considered pre-cancerous, as they can sometimes progress to squamous cell carcinoma if untreated.",
+    "image_url": "https://www.dermatologyadvisor.com/wp-content/uploads/sites/20/2019/03/ch697.fig1_.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Vascular lesions",
+    "description": "Vascular lesions are abnormalities of blood vessels that appear on the skin's surface. They can look like red, purple, or blue spots or patches and are caused by clusters of dilated or broken blood vessels.",
+    "image_url": "https://drkaga.com/wp-content/uploads/2023/11/B-Vascular-Lesions.jpeg"
+  },
+  {
+    "id": 7,
+    "title": "Dermatofibroma",
+    "description": "Dermatofibroma is a common benign skin growth that usually appears as a small, firm bump on the legs or arms. It often feels hard to the touch and may be brown, pink, or reddish in color. Dermatofibromas are harmless and non-cancerous, though they may remain for years or be removed for cosmetic reasons.",
+    "image_url": "https://cdn.prod.website-files.com/651f58d4178f1ca414144bf4/651f58d4178f1ca414144ce7_1_shutterstock_1347781916.jpg"
+  }
+]

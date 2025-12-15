@@ -14,7 +14,13 @@ app = Flask(__name__)
 
 CORS(
     app,
-    resources={r"/*": {"origins": "https://detect-disease.vercel.app"}},
+    resources={
+        r"/*": {
+            "origins": [
+                "https://detect-disease.vercel.app"
+            ]
+        }
+    },
     supports_credentials=True
 )
 

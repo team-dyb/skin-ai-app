@@ -20,6 +20,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
+
+document.addEventListener('click', function(event) {
+            const isClickInsideMenu = navLinksContainer.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+            const isMenuOpen = navLinksContainer.classList.contains('active');
+
+            if (isMenuOpen && !isClickInsideMenu && !isClickOnToggle) {
+                navLinksContainer.classList.remove('active');
+                menuToggle.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
     } else {
         console.error("Error");
     }

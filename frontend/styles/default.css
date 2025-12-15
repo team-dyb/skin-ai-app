@@ -89,7 +89,7 @@ body {
     display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
         html {
     background: linear-gradient(270deg, #8DC3E7 0%, #91F0C6 100%); 
     padding: 30px; 

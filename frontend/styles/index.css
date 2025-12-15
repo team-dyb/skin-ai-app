@@ -21,6 +21,7 @@
   border-radius: 75px;
   overflow: hidden; 
   margin-left: -40px;
+  justify-content: flex-start;
 }
 
 .hero-img h1 {
@@ -304,7 +305,7 @@ left: 75px;
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
   .hero {
         width: 70vw; 
         height: auto; 
@@ -317,7 +318,7 @@ left: 75px;
 
     .hero-img img {
         width: 100%; 
-        height: 350px; 
+        height: auto; 
         margin-left: 0;
         object-fit: cover;
     }

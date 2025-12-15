@@ -73,7 +73,7 @@ contact-icon {
     height: 35px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .team-page-content {
         padding: 40px 20px;
     }

@@ -185,3 +185,166 @@ margin-left: 20px;
   margin-top: 130px;
   margin-left: 330px;
 }
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: rgba(255, 255, 255, 0.911);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out; 
+}
+
+.popup-content h2 {
+    color: #47b064; /* Kırmızı uyarı rengi */
+    margin-top: 0;
+    font-family: Actor;
+    font-size: 1.5em;
+}
+
+.popup-content p {
+    margin: 15px 0;
+
+    font-family: Actor;
+    font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 2rem;
+    color: #333;
+}
+
+#accept-disclaimer {
+    background-color: #4aa2dd; /* Mavi onay butonu */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#accept-disclaimer:hover {
+    background-color: #1b6a9f;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column; 
+        margin-left: 0; 
+        margin-top: 30px;
+        padding: 0 15px; 
+        justify-content: center;
+        align-items: center; 
+        gap: 30px;
+    }
+
+    #heading {
+        font-size: 25px;
+        margin-top: 20px;
+        margin-left: 0; 
+        text-align: center;
+        width: 100%;
+    }
+
+    .left-column {
+        width: 100%; 
+        align-items: center; 
+        gap: 15px;
+    }
+
+    .input-box {
+        width: 90%; 
+        max-width: 250px; 
+        height: 250px; 
+        border-radius: 40px;
+    }
+    
+    #upload-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #upload-text {
+        font-size: 12px;
+        margin-top: 80px;
+    }
+    
+    #detect {
+        font-size: 20px;
+        padding: 8px 12px;
+        width: 90%; 
+        max-width: 200px;
+        margin-left: 0;
+    }
+
+    .right-column {
+        width: 100%; 
+        margin-left: 0; 
+        align-items: center; 
+    }
+
+    .right-column h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    #result {
+        width: 90%; 
+        max-width: 700px; 
+        height: auto; 
+        min-height: 200px;
+         display: flex;
+         flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    #result h3 {
+        font-size: 20px;
+        margin-left: 15px;
+        margin-top: 15px;
+    } 
+
+    #result p {
+        font-size: 16px;
+        line-height: 1.5rem; 
+        margin-left: 15px;
+        padding-bottom: 15px;
+    }
+
+
+     .loading-spinner {
+        width: 20px; 
+        height: 20px;
+        border-width: 4px; 
+        right: 210px;
+        margin-bottom: 80px;
+    }
+
+
+}

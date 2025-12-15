@@ -15,19 +15,38 @@
         <link rel="icon" type="image/png" href="images/web-icon.svg"/>
         
 </head>
+
+<div id="disclaimer-popup" class="popup-overlay">
+    <div class="popup-content">
+        <h2>IMPORTANT NOTICE: Medical Disclaimer</h2>
+        <hr>
+        <p>This application is <strong>NOT</strong> a medical diagnosis tool.</p>
+        <p>It is developed only for awareness and educational purposes. AI predictions can never replace a consultation with a doctor.</p>
+        <button id="accept-disclaimer">I UNDERSTAND AND AGREE</button>
+    </div>
+</div>
+
 <body>
+   
     <div class="nav-wrapper">
         <nav class="main-nav">
            <div class="logo">
                 Detect<span class="logo-blue">Disease</span>
            </div>
-           <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="detection.html" class="active">Detection Page</a></li>
-                <li><a href="diseases.html">Diseases</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="team.html">Our Team</a></li>
-           </ul>
+                       <div class="hamburger-menu">
+                <button id="menu-toggle">
+                    <img src="images/hamburger-menu.svg" alt="">
+                </button>
+            </div>
+               <div class="normal-menu">
+               <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="detection.html" class="active">Detection Page</a></li>
+                    <li><a href="diseases.html">Diseases</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Our Team</a></li> 
+               </ul>
+               </div>
         </nav>
     </div>
 
@@ -40,7 +59,7 @@
             <div class="input-box">
                 <input type="file" id="imageUpload" accept="image/*" style="display: none;">
                 <label for="imageUpload" style="cursor: pointer;">
-                <img src="/images/upload-icon.svg" alt="Upload" id="upload-icon">
+                <img src="images/upload-icon.svg" alt="Upload" id="upload-icon">
                 <p id="upload-text">click to upload <br>your image</p>
                 </label>
             </div>
@@ -77,22 +96,24 @@ document.getElementById("detect").addEventListener("click", async () => {
     const formData = new FormData();
     formData.append("image", fileInput.files[0]);
 
+ 
+    const API_BASE = "https://skin-ai-app-production.up.railway.app/predict";
 
-    const response = await fetch("https://skin-ai-app-production.up.railway.app/predict", {
-        method: "POST",
-        body: formData
-    });
+    const response = await fetch(`${API_BASE}`, {
+    method: "POST",
+    body: formData
+});
 
     const data = await response.json();
-
     if (data.error) {
         document.getElementById("result").innerHTML = `<p style="color:red">${data.error}</p>`;
     } else {
         document.getElementById("result").innerHTML = `
-            <h3>🧪Based on the photo, this could be your skin condition: ${data.final_prediction.toUpperCase()}</h3>
+            <h3>🧪Based on the photo, this could be your skin condition: ${data.final_prediction}</h3>
             <p>Accuracy: ${(data.confidence).toFixed(2)}%</p>
             <p>Description: ${data.description}</p>
         `;
+
     }
 });
 
@@ -100,27 +121,20 @@ document.getElementById('imageUpload').addEventListener('change', function(event
         
         const fileInput = event.target;
         
-        // Değiştireceğimiz ana kutu (.input-box)
         const inputBox = document.querySelector('.input-box');
         
-        // Gizleyeceğimiz orjinal içerik (ikon ve yazı)
         const uploadIcon = document.getElementById('upload-icon');
         const uploadText = document.getElementById('upload-text');
 
 
 
-        // Bir dosya seçilip seçilmediğini kontrol et
         if (fileInput.files && fileInput.files[0]) {
             
             const reader = new FileReader();
             
-            // Dosya okuma işlemi bittiğinde...
             reader.onload = function(e) {
-                // 1. .input-box'ın arkaplan resmini seçilen resimle değiştir
-                // e.target.result, resmin data URL'sini içerir (örn: "url('data:image/jpeg;base64,...')")
                 inputBox.style.backgroundImage = `url(${e.target.result})`;
                 
-                // 2. Orjinal ikon ve yazıyı GİZLE
                 if (uploadIcon) {
                     uploadIcon.style.display = 'none';
                 }
@@ -132,7 +146,27 @@ document.getElementById('imageUpload').addEventListener('change', function(event
             reader.readAsDataURL(fileInput.files[0]);
         }
     });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const popup = document.getElementById('disclaimer-popup');
+    const acceptButton = document.getElementById('accept-disclaimer');
+    
+    const hasAccepted = localStorage.getItem('disclaimerAccepted');
+
+    if (hasAccepted === 'true') {
+        popup.classList.add('hidden');
+    } else {
+        popup.classList.remove('hidden');
+    }
+
+    acceptButton.addEventListener('click', () => {
+        popup.classList.add('hidden');
+        localStorage.setItem('disclaimerAccepted', 'true');
+    });
+});
 </script>
+<script src="scripts/default.js"></script>
 
 </body>
 </html>

@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-RUN wget "https://raw.githubusercontent.com/DYcoded/skin-ai-app/main/backend/final_resnet_oversampled_weights.weights.h5" -O final_resnet_oversampled_weights.weights.h5
+RUN wget "https://github.com/DYcoded/skin-ai-app/releases/download/v1.0.0/final_resnet_oversampled_weights.weights.h5" -O final_resnet_oversampled_weights.weights.h5
 
 COPY . /app
 

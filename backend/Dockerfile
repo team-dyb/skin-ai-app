@@ -1,21 +1,18 @@
 FROM python:3.10-slim
 
-
 RUN apt-get update && apt-get install -y \
-    git \
-    git-lfs \
+    wget \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-
 WORKDIR /app
+
+RUN wget "https://raw.githubusercontent.com/DYcoded/skin-ai-app/main/backend/final_resnet_oversampled_weights.weights.h5" -O final_resnet_oversampled_weights.weights.h5
 
 COPY . /app
 
-RUN git lfs pull
 
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
-
 CMD ["python", "testapi.py"]

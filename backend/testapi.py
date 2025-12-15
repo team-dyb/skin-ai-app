@@ -88,7 +88,7 @@ FULL_NAME_MAP = {
 # define routes
 @app.route('/', methods=['GET'])
 def home():
-    return "Skin Cancer Prediction API is running (Functional API - MobileNetV2)!"
+    return "Skin Cancer Prediction API is running (Functional API - ResNet50V2)!"
 
 # prediction endpoint
 @app.route('/predict', methods=['POST'])

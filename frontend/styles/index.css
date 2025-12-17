@@ -314,6 +314,8 @@ left: 75px;
         flex-direction: column; 
         gap: 20px;
         padding-bottom: 20px;
+        position: relative;
+        overflow: hidden;
     }
 
     .hero-img img {
@@ -325,7 +327,7 @@ left: 75px;
 
     .hero-img h1 {
         font-size: 33px; 
-        margin: -340px 0 0 30px; 
+        margin: -380px 0 0 30px; 
         line-height: 1;
     }
     .hero-content {
